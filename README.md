@@ -17,10 +17,27 @@ API ToDo list apenas testando o código em python
 - PyJWT==2.10.1
 - Werkzeug==3.1.3
 
-## Como instalar? ##
-
+## Como instalar os módulos? ##
+- Utilize o venv( ambiente virtual) para instalar os módulos necessários, se não tiver instalado execute o comando abaixo via Pip: 
+````
+python -m pip install --user virtualenv
+````
+Criar o ambiente virtual 
+````
+python -m venv venv
+````
+Utilizar o ambiente, configuração para Linux/Mac: 
+````
+source venv/bin/activate
+````
+Utilizar o ambiente, configuração para Windows: 
+````
+venv\Scripts\activate
+````
 - Baixe o python na versão 3.13
 - Instale as depedencias que estão descritas dentro do requeriments.txt com seguinte comando: 
 ````
 pip install -r requeriments.txt
 ````
+## Como executar?##
+Utilize o venv( ambiente virtual) para instalar os módulos necessários
