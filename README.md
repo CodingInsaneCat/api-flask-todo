@@ -19,7 +19,7 @@ API ToDo list apenas testando o código em python
 
 
 > [!TIP]
-> # Como instalar os módulos? # 
+> ### Como instalar os módulos? ### 
 
 - Baixe o python na versão 3.13
 - Utilize o venv( ambiente virtual) para instalar os módulos necessários, se não tiver instalado execute o comando abaixo via Pip: 
@@ -38,8 +38,8 @@ Utilizar o ambiente, configuração para Windows:
 ````
 venv\Scripts\activate
 ````
-
-## Como executar?##
+> [!TIP]
+> ### Como executar? ###
 Utilize o venv( ambiente virtual) para instalar os módulos necessários, descrito nos passos anteriores
 
 - Instale as depedencias que estão descritas dentro do requeriments.txt com seguinte comando: 
