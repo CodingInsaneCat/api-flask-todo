@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from api_flask_todo.utils.validators import validar_auth
 from api_flask_todo.services.auth_service import AuthService
 
 
@@ -13,11 +14,11 @@ def registrar():
     if not email or not senha:
         return jsonify({"erro": "Email e senha são obrigatórios"}), 400
 
-    usuario, erro = AuthService.registrar(email, senha)
+    erro = validar_auth(dados)
     if erro:
-        return jsonify({"erro": erro}), 400
+        return jsonify({"error": erro}), 400
 
-    return jsonify({"msg": "Usuário registrado com sucesso"}), 201
+    return jsonify({"message": "Usuário registrado com sucesso"}), 201
 
 
 @bp.route("/login", methods=["POST"])
