@@ -16,6 +16,7 @@ class AuthService:
     @staticmethod
     def login(email: str, senha: str):
         user = usuarios.get(email)
+      
         if not user or not bcrypt.check_password_hash(user.senha_hash, senha):
             return None
         token = create_access_token(identity=email)

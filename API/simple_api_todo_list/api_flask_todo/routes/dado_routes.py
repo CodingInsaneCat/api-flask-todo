@@ -8,6 +8,30 @@ bp = Blueprint("dados", __name__, url_prefix="/dados")
 @bp.route("/", methods=["POST"])
 @jwt_required()
 def inserir_dado():
+    """
+    Insere um novo dado
+    ---
+    tags:
+      - Dados
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            titulo:
+              type: string
+            descricao:
+              type: string
+            concluida:
+              type: boolean
+    responses:
+      201:
+        description: Dado inserido com sucesso
+      400:
+        description: Erro de validação
+    """
     dados = request.get_json()
 
     erro = validar_dado(dados)

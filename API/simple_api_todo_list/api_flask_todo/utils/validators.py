@@ -18,9 +18,9 @@ def validar_auth(dado):
     if not dado:
         return "Nenhum dado fornecido"
 
-    email = dado.get("email", "")
-    senha = dado.get("senha", "")
-
+    email = dado.get("email")
+    senha = dado.get("senha")
+   
     if not email:
         return "O campo 'email' é obrigatório"
     

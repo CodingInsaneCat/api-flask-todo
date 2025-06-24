@@ -1,12 +1,26 @@
 from flask import Flask, jsonify
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
+from flasgger import Swagger
 
 bcrypt = Bcrypt()
 jwt = JWTManager()
 
 def create_app():
     app = Flask(__name__)
+    swagger_template = {
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT Authorization header using the Bearer scheme. Example: 'Authorization: Bearer {token}'"
+        }
+    },
+    "security": [{"Bearer": []}]
+}
+
+    swagger = Swagger(app, template=swagger_template)
     app.config.from_object("api_flask_todo.config.Config")
 
 
